@@ -1,0 +1,13 @@
+(:open
+):close
+#t:boolean
+#f:boolean
+1:integer
+0:integer
+-1:integer
+"string":string
+1.010000:double
+':quote
+x:symbol
+y:symbol
+z:symbol

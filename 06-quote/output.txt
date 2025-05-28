@@ -1,0 +1,49 @@
+clang -gdwarf-4 -fPIC lib/linkedlist-x86_64.o lib/talloc-x86_64.o lib/tokenizer-x86_64.o lib/parser-x86_64.o main.c interpreter.c -o interpreter
+rm -f *.o
+rm -f vgcore.*
+
+-------------------------------------------------------------
+When debugging, run just a single failing test individually.
+It's faster.
+You can do that just by running:
+     just build
+     ./interpreter < test-files-m/t01.scm
+     or
+     just build
+     valgrind ./interpreter < test-files-m/t01.scm
+(replace test number for 01)
+-------------------------------------------------------------
+
+
+return code is  0
+------Test quote01 ------
+---OUTPUT CORRECT---
+---VALGRIND NO ERROR---
+------Test quote02 ------
+---OUTPUT INCORRECT---
+Correct output:
+(1 2 3)
+Student output:
+?
+---VALGRIND NO ERROR---
+------Test quote03 ------
+---OUTPUT INCORRECT---
+Correct output:
+()
+Student output:
+?
+---VALGRIND NO ERROR---
+------Test quote04 ------
+---OUTPUT INCORRECT---
+Correct output:
+(1 2 3)
+Student output:
+?
+---VALGRIND NO ERROR---
+------Test quote07 ------
+---OUTPUT INCORRECT---
+Correct output:
+(1 2 3 (quote 4 5 6))
+Student output:
+?
+---VALGRIND NO ERROR---

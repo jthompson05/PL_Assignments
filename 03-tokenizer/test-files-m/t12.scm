@@ -1,3 +1,0 @@
-;; Testing non bools
-
-#a
